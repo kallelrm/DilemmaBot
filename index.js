@@ -1,7 +1,10 @@
+
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const token = 'NjA1MTU0OTIxNjc5MTU5MzQ3.XT4tIw.G3x0-X5y0XR1pRhlgR2X3qd9LS4';
+require('dotenv').config();
+const token = process.env.DISCORD_TOKEN;
 
 client.on('ready', () =>{
     console.log('Bot is on');
