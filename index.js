@@ -32,7 +32,18 @@ client.on('message', message=>{
             if(!args[1]) return message.reply('Please define a second arg')
             message.channel.bulkDelete(args[1]);
             break;
+        case PREFIX+"embed":
+            const embed = new Discord.RichEmbed()
+                .setTitle('User information')
+                .addField('User Name', message.author.username)
+                .addField('Version', '0.0.1')
+                .addField('Current Server', message.guild.name)
+                .setColor(0xff72fb)
+                .setThumbnail(message.author.avatarURL)
+                message.channel.send(embed);
+        break;
     }
+
 });
 
 client.login(token);
